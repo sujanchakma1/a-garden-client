@@ -1,9 +1,9 @@
 import React from "react";
 
-const GardenExploreCard = ({gardeners}) => {
+const GardenExploreCard = ({ gardeners }) => {
   // console.log(gardeners)
   return (
-    <div className="text-lime-700 bg-green-100 rounded-md  hover:shadow-2xl">
+    <div className="bg-base-300 rounded-md  hover:shadow-2xl">
       <figure>
         <img
           src={gardeners.image}
@@ -17,7 +17,9 @@ const GardenExploreCard = ({gardeners}) => {
           <div className="badge badge-secondary">{gardeners.age}</div>
         </h2>
         <h2 className="font-semibold">Experience: {gardeners.experiences}</h2>
-        <h2 className="font-semibold">Share Tips: {gardeners.totalSharedTips}</h2>
+        <h2 className="font-semibold">
+          Share Tips: {gardeners.totalSharedTips}
+        </h2>
         <div className="card-actions justify-end">
           <div className="badge badge-outline">{gardeners.status}</div>
           <div className="badge badge-outline">{gardeners.gender}</div>

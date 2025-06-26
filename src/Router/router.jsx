@@ -12,6 +12,7 @@ import GardenExplore from "../Components/GardenExplore";
 import TipsDetails from "../Components/TipsDetails";
 import UpdateTips from "../Components/UpdateTips";
 import Loading from "../Components/Loading";
+import GardenersDetails from "../Components/GardenersDetails";
 
 const router = createBrowserRouter([
   {
@@ -33,6 +34,11 @@ const router = createBrowserRouter([
       {
         path: "/garden/explore",
         Component: GardenExplore,
+      },
+      {
+        path: "gardeners/details/:id",
+        loader: () => fetch("https://a-garden-server.vercel.app/allGardeners"),
+        Component: GardenersDetails,
       },
       {
         path: "/garden/browsTips",
