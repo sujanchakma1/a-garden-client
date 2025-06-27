@@ -15,6 +15,9 @@ const Navbar = () => {
         <NavLink to="/">Home</NavLink>
       </li>
       <li>
+        <NavLink to="/dashboard">Dashboard</NavLink>
+      </li>
+      <li>
         <NavLink to="/garden/explore">Explore Gardeners</NavLink>
       </li>
       <li>
@@ -56,12 +59,12 @@ const Navbar = () => {
       <div className="navbar flex justify-between items-center w-11/12 mx-auto">
         <div className="flex items-center">
           <div className="dropdown items-center">
-            <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+            <div tabIndex={0} role="button" className="cursor-pointer  lg:hidden">
               <HiMenuAlt1 size={24} />
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content bg-gray-400 rounded-box z-1 mt-3 w-52 p-2 shadow flex gap-5"
+              className="menu menu-sm dropdown-content bg-gray-600 rounded-box z-1 mt-3 w-52 p-2 shadow flex gap-5"
             >
               {links}
             </ul>
@@ -69,7 +72,7 @@ const Navbar = () => {
           <AGardenLogo></AGardenLogo>
         </div>
 
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-2">
           <div className=" hidden lg:flex ">
             <ul className="menu menu-horizontal flex gap-3 px-1">{links}</ul>
           </div>

@@ -19,7 +19,7 @@ const BrowsTips = () => {
   });
 
   return (
-    <div className="my-10 space-y-5 overflow-x-auto">
+    <div className="my-10 space-y-5" data-aos="fade-up"  data-aos-anchor-placement="top-bottom">
       <Helmet>
         <title>A Garden || Brows Tips</title>
       </Helmet>

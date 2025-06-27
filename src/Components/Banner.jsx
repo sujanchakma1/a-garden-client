@@ -3,8 +3,9 @@ import slider2 from "../assets/banner-2.jpg";
 import slider3 from "../assets/banner-3.jpg";
 
 const Banner = () => {
+   
   return (
-    <div className="my-10">
+    <div className="my-10" >
       <div className="carousel w-full">
         <div id="slide1" className="carousel-item relative w-full">
           {/* Background Image */}

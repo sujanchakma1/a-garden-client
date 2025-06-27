@@ -1,4 +1,5 @@
-import React, { use, useState } from "react";
+import Aos from "aos";
+import React, { use, useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { FaRegEdit } from "react-icons/fa";
 import { RiDeleteBin6Line } from "react-icons/ri";
@@ -40,9 +41,15 @@ const MyTips = () => {
       }
     });
   };
+  useEffect(() => {
+        Aos.init({
+          duration: 800,
+          once: false,
+        });
+      }, []);
 
   return (
-    <div className="overflow-x-auto my-10 space-y-10">
+    <div className="my-10 space-y-10" data-aos="fade-up"  data-aos-anchor-placement="top-bottom">
       <Helmet>
         <title>A Garden || My Tips</title>
       </Helmet>
@@ -59,64 +66,66 @@ const MyTips = () => {
           </Link>
         </div>
       ) : (
-        <table className="md:table table-sm  rounded-box border border-base-content/10">
-          <thead className="text-center">
-            <tr>
-              <th>Tips</th>
-              <th>Author</th>
-              <th>Title</th>
-              <th>PlantType</th>
-              <th>Description</th>
-              <th>DifficultyLevel</th>
-              <th>Category</th>
-              <th>Availability</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody className="bg-base-200">
-            {allTips.map((tips, index) => (
-              <tr key={index} className="items-center text-center">
-                <th>{index + 1}</th>
-                <td className="flex gap-2 items-center">
-                  <div>
-                    <img
-                      src={tips.photo}
-                      alt="Avatar Tailwind CSS Component"
-                      className="rounded-md object-cover h-12 w-12"
-                    />
-                  </div>
-                  <div>
-                    {tips.name} <br />
-                    {tips.email}
-                  </div>
-                </td>
-                <td>{tips.title}</td>
-                <td>{tips.plantType}</td>
-                <td>{tips.description}</td>
-                <td>{tips.difficultyLevel}</td>
-                <th>{tips.category}</th>
-                <th>{tips.availability}</th>
-                <td className="flex gap-8 items-center text-center">
-                  <div>
-                    <Link to={`/tips/update/${tips._id}`}>
-                      {" "}
-                      <FaRegEdit size={18} />
-                    </Link>
-                  </div>
-                  <div>
-                    <button
-                      onClick={() => handleTipsDelete(tips._id)}
-                      className="cursor-pointer"
-                    >
-                      {" "}
-                      <RiDeleteBin6Line size={18} />
-                    </button>
-                  </div>
-                </td>
+        <div className="overflow-x-auto rounded-box border border-base-content/10"> 
+          <table className=" md:table table-sm text-center items-center ">
+            <thead >
+              <tr>
+                <th>Tips</th>
+                <th>Author</th>
+                <th>Title</th>
+                <th>PlantType</th>
+                <th>Description</th>
+                <th>DifficultyLevel</th>
+                <th>Category</th>
+                <th>Availability</th>
+                <th>Action</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody className="bg-base-200">
+              {allTips.map((tips, index) => (
+                <tr key={index} className="items-center text-center">
+                  <th>{index + 1}</th>
+                  <td className="flex gap-2 items-center">
+                    <div>
+                      <img
+                        src={tips.photo}
+                        alt="Avatar Tailwind CSS Component"
+                        className="rounded-md object-cover h-12 w-12"
+                      />
+                    </div>
+                    <div>
+                      {tips.name} <br />
+                      {tips.email}
+                    </div>
+                  </td>
+                  <td>{tips.title}</td>
+                  <td>{tips.plantType}</td>
+                  <td>{tips.description}</td>
+                  <td>{tips.difficultyLevel}</td>
+                  <th>{tips.category}</th>
+                  <th>{tips.availability}</th>
+                  <td className="flex gap-8 items-center text-center">
+                    <div>
+                      <Link to={`/tips/update/${tips._id}`}>
+                        {" "}
+                        <FaRegEdit size={18} />
+                      </Link>
+                    </div>
+                    <div>
+                      <button
+                        onClick={() => handleTipsDelete(tips._id)}
+                        className="cursor-pointer"
+                      >
+                        {" "}
+                        <RiDeleteBin6Line size={18} />
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       )}
     </div>
   );

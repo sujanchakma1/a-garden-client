@@ -1,8 +1,15 @@
-import React from "react";
+import Aos from "aos";
+import React, { useEffect } from "react";
 
 const Extra2 = () => {
+  useEffect(() => {
+      Aos.init({
+        duration: 2000,
+        once: false,
+      });
+    }, []);
   return (
-    <section className="my-10 px-4 te text-center items-center">
+    <section className="my-10 px-4 te text-center items-center" data-aos="fade-up"  data-aos-anchor-placement="top-bottom">
       <h2 className="text-2xl font-bold mb-4">🌟 Happy Gardeners</h2>
 
       <div className="md:flex space-y-5 gap-5">

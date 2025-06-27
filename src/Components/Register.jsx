@@ -17,7 +17,6 @@ const Register = () => {
     // console.log(newUser);
     createUser(email, password)
       .then((result) => {
-        // console.log(result.user);
         const newData = {
           email,
           ...newUser,
@@ -33,7 +32,7 @@ const Register = () => {
         })
           .then((res) => res.json())
           .then((data) => {
-            // console.log("after db", data);
+            console.log("after db", data);
             if (data.insertedId) {
               Swal.fire({
                 title: "Successfully Login!",
@@ -58,6 +57,7 @@ const Register = () => {
   const handleGoogleLogin = () => {
     googleLogin()
       .then((result) => {
+        console.log("googlelogin:",result.user)
         if (result.user) {
           Swal.fire({
             title: "Successfully Login!",

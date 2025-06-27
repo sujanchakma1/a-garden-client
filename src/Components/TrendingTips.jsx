@@ -1,12 +1,20 @@
-import React, { use } from "react";
+import React, { use, useEffect } from "react";
+import "aos/dist/aos.css";
+import Aos from "aos";
 
 const trendingTipsPromise = fetch("https://a-garden-server.vercel.app/trendingTips").then(
   (res) => res.json()
 );
 const TrendingTips = () => {
   const trendingTips = use(trendingTipsPromise);
+  useEffect(() => {
+    Aos.init({
+      duration: 1500,
+      once: false,
+    });
+  }, []);
   return (
-    <div>
+    <div data-aos="fade-up"  data-aos-anchor-placement="top-bottom">
       <h2 className="font-bold text-3xl text-center">Trending Tips</h2>
       <div className="my-10 overflow-x-auto rounded-box border border-base-content/10 bg-base-100">
         <table className="md:table table-sm items-center text-center">

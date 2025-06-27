@@ -1,28 +1,28 @@
 import React from "react";
+import { Link } from "react-router";
 
 const GardenExploreCard = ({ gardeners }) => {
   // console.log(gardeners)
   return (
-    <div className="bg-base-300 rounded-md  hover:shadow-2xl">
-      <figure>
+    <div className="card bg-base-100 shadow-md border hover:shadow-lg transition-all">
+      <figure className="p-4">
         <img
           src={gardeners.image}
-          className="w-full h-[80%] object-cover rounded-md"
-          alt="Shoes"
+          alt={gardeners.name}
+          className="w-full h-48 object-cover rounded-md"
         />
       </figure>
       <div className="card-body">
-        <h2 className="card-title">
-          {gardeners.name}
-          <div className="badge badge-secondary">{gardeners.age}</div>
-        </h2>
-        <h2 className="font-semibold">Experience: {gardeners.experiences}</h2>
-        <h2 className="font-semibold">
-          Share Tips: {gardeners.totalSharedTips}
-        </h2>
+        <h2 className="card-title">{gardeners.name}</h2>
+        <p className="text-sm">{gardeners.title}</p>
+        <p className="text-xs text-gray-500">{gardeners.description}</p>
         <div className="card-actions justify-end">
-          <div className="badge badge-outline">{gardeners.status}</div>
-          <div className="badge badge-outline">{gardeners.gender}</div>
+          <Link
+            to={`/gardeners/details/${gardeners._id}`}
+            className="btn btn-outline btn-sm btn-primary rounded-full mx-5"
+          >
+            View Details
+          </Link>
         </div>
       </div>
     </div>

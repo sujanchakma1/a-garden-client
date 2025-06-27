@@ -13,6 +13,8 @@ import TipsDetails from "../Components/TipsDetails";
 import UpdateTips from "../Components/UpdateTips";
 import Loading from "../Components/Loading";
 import GardenersDetails from "../Components/GardenersDetails";
+import DashboardLayout from "../Components/DashboardLayout/DashboardLayout";
+import Overview from "../Components/DashboardLayout/Overview";
 
 const router = createBrowserRouter([
   {
@@ -77,6 +79,33 @@ const router = createBrowserRouter([
             <UpdateTips></UpdateTips>
           </PrivateRoute>
         ),
+      },
+    ],
+  },
+  {
+    path: "/dashboard",
+    element: (
+      <PrivateRoute>
+        <DashboardLayout></DashboardLayout>
+      </PrivateRoute>
+    ),
+    children: [
+      {
+        index: true,
+        loader: () => fetch("https://a-garden-server.vercel.app/allGardeners"),
+        Component: Overview,
+      },
+      {
+        path: "/dashboard/gardeners",
+        Component: GardenExplore,
+      },
+      {
+        path: "/dashboard/shareTips",
+        Component: ShareGardenTips,
+      },
+      {
+        path: "/dashboard/myTips",
+        Component: MyTips,
       },
     ],
   },

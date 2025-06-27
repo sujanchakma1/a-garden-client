@@ -3,6 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+SC:ital,wght@0,100..900;1,100..900&display=swap');
 @import "tailwindcss";
 @plugin "daisyui";
+
 /* DaisyUI theme setup */
 @layer components {
   html[data-theme='light'] {

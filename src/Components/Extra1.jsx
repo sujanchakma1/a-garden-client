@@ -1,8 +1,19 @@
-import React from "react";
+import Aos from "aos";
+import React, { useEffect } from "react";
 
 const Extra1 = () => {
+  useEffect(() => {
+    Aos.init({
+      duration: 1500,
+      once: false
+    });
+  }, []);
   return (
-    <section className="my-12 bg-base-200 px-4 max-w-4xl mx-auto text-center">
+    <section
+      className="my-12 bg-base-200 px-4 max-w-4xl mx-auto text-center"
+      data-aos="fade-up"
+      data-aos-anchor-placement="top-bottom"
+    >
       <h2 className="text-3xl font-bold mb-4">
         Welcome to Our Gardening Community!
       </h2>

@@ -1,7 +1,8 @@
-import React, { use } from "react";
+import React, { use, useEffect } from "react";
 import { AuthContext } from "../Context/authContext";
 import Swal from "sweetalert2";
 import { Helmet } from "react-helmet-async";
+import Aos from "aos";
 
 const ShareGardenTips = () => {
   const { user } = use(AuthContext);
@@ -32,8 +33,14 @@ const ShareGardenTips = () => {
         }
       });
   };
+  useEffect(() => {
+        Aos.init({
+          duration: 800,
+          once: false,
+        });
+      }, []);
   return (
-    <div>
+    <div data-aos="fade-up"  data-aos-anchor-placement="top-bottom">
       <Helmet>
         <title>A Garden || Share Tips</title>
       </Helmet>

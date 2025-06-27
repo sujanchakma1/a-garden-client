@@ -1,9 +1,10 @@
 import React from "react";
 import { FaFacebook, FaGithub, FaInstagramSquare } from "react-icons/fa";
-import { NavLink } from "react-router";
-import garden from "../assets/a-garden-logo.png";
+import { Link, NavLink } from "react-router";
+import AGardenLogo from "../Shared/AGardenLogo";
 
 const Footer = () => {
+
   return (
     <footer className="footer footer-horizontal footer-center bg-gradient-to-r from-emerald-300 items-center via-green-700 to-lime-600 text-white rounded p-10">
       <div className="grid grid-cols-3 gap-20 text-center items-center">
@@ -19,11 +20,19 @@ const Footer = () => {
           </nav>
         </div>
         <div>
-          <nav className="grid menu grid-col gap-2">
-            <h6 className="footer-title">Terms & Conditions</h6>
-            <a className="link link-hover">Account Terms</a>
-            <a className="link link-hover">User Responsibilities</a>
-            <a className="link link-hover">Intellectual Property</a>
+          <nav className="grid menu grid-col gap-2 text-center items-center">
+            <h6 className="footer-title">Site</h6>
+            <ul>
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/garden/explore">Explore Gardeners</Link>
+              </li>
+              <li>
+                <Link to="/garden/browsTips">Browse Tips</Link>
+              </li>
+            </ul>
           </nav>
         </div>
         <div>
@@ -48,7 +57,7 @@ const Footer = () => {
         <p className="font-semibold">
           Copyright © {new Date().getFullYear()} - All right reserved by
         </p>
-        <img className="w-16" src={garden} alt="" />
+        <AGardenLogo></AGardenLogo>
       </aside>
     </footer>
   );
