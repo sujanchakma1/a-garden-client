@@ -19,7 +19,7 @@ const Banner = () => {
 
           {/* Text Content */}
           <div className="absolute inset-0 flex items-center justify-center text-white px-4">
-            <div className="max-w-md text-center space-y-2">
+            <div className="max-w-sm md:max-w-md text-center space-y-2">
               <h2 className="text-2xl font-bold">A Garden to Rest the Soul</h2>
               <p className="text-gray-200">
                 A peaceful park filled with blooming flowers, where the scent of
@@ -49,7 +49,7 @@ const Banner = () => {
           <div className="absolute inset-0 bg-black/20 rounded-md"></div>
           {/* Text Content */}
           <div className="absolute inset-0 flex items-center justify-center text-white px-4">
-            <div className="max-w-md text-center space-y-2">
+            <div className="max-w-sm md:max-w-md text-center space-y-2">
               <h2 className="text-2xl font-bold">
                 The Road Through Green Silence
               </h2>
@@ -80,7 +80,7 @@ const Banner = () => {
           <div className="absolute inset-0 bg-black/20 rounded-md"></div>
           {/* Text Content */}
           <div className="absolute inset-0 flex items-center justify-center text-white px-4">
-            <div className="max-w-md text-center space-y-2">
+            <div className="max-w-sm md:max-w-md text-center space-y-2">
               <h2 className="text-2xl font-bold">Whispers by the Lake</h2>
               <p className="text-gray-200">
                 A still lake and a quiet tree — nature’s gentle whisper in a

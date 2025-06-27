@@ -126,7 +126,7 @@ const Register = () => {
           {/* Google */}
           <button
             onClick={handleGoogleLogin}
-            className="btn btn-outline btn-success  text-black border-[#e5e5e5]"
+            className="btn btn-outline btn-success   border-[#e5e5e5]"
           >
             <svg
               aria-label="Google logo"

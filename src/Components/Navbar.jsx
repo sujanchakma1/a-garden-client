@@ -55,7 +55,7 @@ const Navbar = () => {
       });
   };
   return (
-    <div className="bg-gradient-to-r from-emerald-600 items-center via-green-400 to-lime-400 text-white fixed w-full top-0 z-50">
+    <div className="bg-gradient-to-r from-emerald-800 items-center via-green-500 to-lime-300 text-white fixed w-full top-0 z-50">
       <div className="navbar flex justify-between items-center w-11/12 mx-auto">
         <div className="flex items-center">
           <div className="dropdown items-center">
@@ -106,10 +106,10 @@ const Navbar = () => {
               </ul>
             </div>
           ) : (
-            <div className="flex gap-5">
+            <div className="flex gap-2">
               <Link
                 to="/auth/login"
-                className="btn btn-outline btn-primary rounded-full px-5"
+                className="btn btn-outline btn-primary rounded-full px-5 text-white"
               >
                 Login
               </Link>
